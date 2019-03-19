@@ -10,7 +10,7 @@ client.on('ready', () => {
 client.on('message', message => { // هاذا للبرودكسات
         var prefix = '!'; // هنا تقدر تغير البرفكس
 	var command = message.content.split(" ")[0];
-	if(command == prefix + 'bc') { // الكوماند !bc
+	if(command == prefix + 'ar') { // الكوماند !ar
 		if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You don`t have **MANAGE_MESSAGES** permission!");
 		var args = message.content.split(' ').slice(1).join(' ');
 		if(message.author.bot) return;
@@ -26,11 +26,11 @@ client.on('message', message => { // هاذا للبرودكسات
 		.setFooter(message.author.tag, message.author.avatarURL)
 		
 		message.channel.send(bcSure).then(msg => {
-			msg.react('✅').then(() => msg.react('❎'));
+			msg.react('®').then(() => msg.react('❎'));
 			message.delete();
 			
 			
-			let yesEmoji = (reaction, user) => reaction.emoji.name === '✅'  && user.id === message.author.id;
+			let yesEmoji = (reaction, user) => reaction.emoji.name === '®'  && user.id === message.author.id;
 			let noEmoji = (reaction, user) => reaction.emoji.name === '❎' && user.id === message.author.id;
 			
 			let sendBC = msg.createReactionCollector(yesEmoji);
@@ -45,7 +45,7 @@ client.on('message', message => { // هاذا للبرودكسات
             .addField(' » الرسالة : ', args)
             .setColor('#000000')
             // m.send(`[${m}]`);
-            m.send(`${m}`,{embed: bc});
+            m.send(`${m}`,{embed: ar});
         });
 				message.channel.send(`:timer: **يتم الان الارسال الى** \`\`${message.guild.memberCount}\`\` **عضو**`).then(msg => msg.delete(5000));
 				msg.delete();
