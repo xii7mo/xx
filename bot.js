@@ -8,7 +8,7 @@ client.on('ready', () => {
 
 
 client.on('message', message => { // هاذا للبرودكسات
-        var prefix = '!'; // هنا تقدر تغير البرفكس
+        var prefix = 'k'; // هنا تقدر تغير البرفكس
 	var command = message.content.split(" ")[0];
 	if(command == prefix + 'ar') { // الكوماند !ar
 		if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You don`t have **MANAGE_MESSAGES** permission!");
